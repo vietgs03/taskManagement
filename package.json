@@ -1,0 +1,21 @@
+{
+  "name": "taskmanagement1",
+  "version": "1.0.0",
+  "description": "Phân tích yêu cầu\r \t1. Tạo tác vụ : Người dùng có thể tạo tác vụ với các thông tin như tiêu đề , Mô tả , thời hạn ,mức độ ưu tiên .\r \t2. Quản lý tác vụ : Người dùng có thể xem danh sách tác vụ hiện có và tìm kiếm tác vụ dựa trên các tiêu chí như tiêu đề , thời hạn, mức độ ưu tiên .\r \t\t1. Cung cấp các bộ lọc sắp xếp tác vụ dựa trên thuộc tính như thời gian hoàn thành , mức độ ưu tiên và trạng thái \r \t\t2. Người dùng có thể cập nhập thông tin tác vụ\r \t\t3. Đánh dấu tác vụ đã hoàn thành và xoá tác vụ không  cần thiết \r \t3. Giao tiếp và thông báo \r \t\t1. Cung cấp chức năng gửi thông báo hoặc email cho người dùng khi có tác vụ mới hoặc khi có sự thay đổi đáng quan tâm \r \t\t2. Cho phép bình luận trong tác vụ\r \t\t\t1. Trong bình luận có tệp đính kèm \r \t4. Báo cáo và thống kê\r \t\t\t1. Tạo 1 báo cáo thống kê tổng quan về tình trạng tác vụ , thời gian , ưu tiên \r \t\t\t2. Cung cấp thống kê , biểu đồ để hiển thị các thông tin quan trọng về hiệu suất công việc và tiến độ.\r \t5. Quyền truy cập và phân quyền .\r \t\t1. Xác định các vai trò người dùng và phân quyền truy cập cho từng vai trò .\r \t\t2. Đảm bảo rằng chỉ những người dùng được quyền hạn truy cập mới có thể xem và chỉnh sửa tác vụ .\r \t6. Giao diện người dùng .\r Phân tích bổ sung :\r \t\t\t1. Tính năng lịch trình : Cho phép người dùng lập lịch cho các tác vụ, đặt thời gian bắt đầu , thời gian kết thúc , thời gian nhắc nhở và thời gian hoàn thành dự kiến .\r \t\t\t2. Tính năng theo dõi thời gian : Cho phép người dùng theo dõi thời gian đã dành cho mỗi tác vụ, Thời gian còn lại và thời gian đã hoàn thành .\r \t\t\t3. Tính năng hồ sơ người dùng\r \t\t\t4. Tính năng phân loại tác vụ\r \t\t\t5. Đa ngôn ngữ \r \t\t\t6. Xuất file\r \t\t\t7. tích hợp j j đó ////\r Phân tích database \r \t1. Bảng User \r \t\t1. rowid (PK)\r \t\t2. uName \r \t\t3. password\r \t2. Bảng Task\r \t\t1. rowid (PK)\r \t\t2. title\r \t\t3. description\r \t\t4. deadline\r \t\t5. priority\r \t\t6. status\r \t\t7. createdBy (FK - Users.rowid)\r \t\t8. assignedTo (fk - Users.rowid)\r \t3. Bảng Comments\r \t\t1. rowid (PK)\r \t\t2. taskId (FK Tasks.rowid)\r \t\t3. userid (FK Users.rowid)\r \t\t4. comment\r \t\t5. attachment\r \t4. Bảng Notifications\r \t\t1. rowid (PK)\r \t\t2. taskID (FK tasks.rowid)\r \t\t3. userID (FK Users.rowid)\r \t\t4. message\r \t\t5. createdDate\r \t5. Bảng Schedules\r \t\t1. rowid (PK)\r \t\t2. taskid (FK Tasks.rowid)\r \t\t3. startTime \r \t\t4. endTime\r \t\t5. reminderTime\r \t\t6. expectedCompletionTime\r \t6. Bảng TaskCategories\r \t\t1. rowid (PK)\r \t\t2. categoryName\r \t7. Bảng Userprofiles\r \t\t1. rowid (PK)\r \t\t2. userID\r \t\t3. firstName\r \t\t4. lastName\r \t\t5. email\r \t\t6. avatar\r \t8. Languages\r \t\t1. rowid (PK)\r \t\t2. LanguageName\r \t9. Taskfile\r \t\t1. rowid (PK)\r \t\t2. taskID (FK tasks.rowid)\r \t\t3. filePath\r Các quan hệ như sau :\r \t- Bảng \"Tasks\" có quan hệ n-1 với bảng \"Users\" thông qua field \"CreatedBy\" và \"assignedTo\"\r \t- Bảng \"Comments\" có quan hệ n-1 với bảng \"Tasks\" và \"Users\"\r \t- Bảng \"Notifications\" có quan hệ n-1 với bảng \"Tasks\" và \"Users\"\r \t- Bảng \"Schedules\" có quan hệ 1-1 với  bảng \"Tasks\"\r \t- Bảng \"UserProfiles\" Có quan hệ 1-1 vói8 bảng \"Users\"\r \t- Bảng \"Languages\" có quan hệ n-1 \"Users\"\r \t- Bảng \"TaskFiles\" có quan hệ n-1 với bảng \"Tasks\"",
+  "main": "sever.js",
+  "scripts": {
+    "build": "nodemon --exec babel-node sever.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.22.8",
+    "@babel/node": "^7.22.6",
+    "@babel/preset-env": "^7.22.7",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.3.2",
+    "nodemon": "^2.0.22"
+  }
+}
