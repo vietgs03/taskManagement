@@ -1,5 +1,5 @@
 # taskManagement
-Phân tích yêu cầu
+# Phân tích yêu cầu
 	1. Tạo tác vụ : Người dùng có thể tạo tác vụ với các thông tin như tiêu đề , Mô tả , thời hạn ,mức độ ưu tiên .
 	2. Quản lý tác vụ : Người dùng có thể xem danh sách tác vụ hiện có và tìm kiếm tác vụ dựa trên các tiêu chí như tiêu đề , thời hạn, mức độ ưu tiên .
 		1. Cung cấp các bộ lọc sắp xếp tác vụ dựa trên thuộc tính như thời gian hoàn thành , mức độ ưu tiên và trạng thái 
@@ -16,7 +16,7 @@ Phân tích yêu cầu
 		1. Xác định các vai trò người dùng và phân quyền truy cập cho từng vai trò .
 		2. Đảm bảo rằng chỉ những người dùng được quyền hạn truy cập mới có thể xem và chỉnh sửa tác vụ .
 	6. Giao diện người dùng .
-Phân tích bổ sung :
+# Phân tích bổ sung :
 			1. Tính năng lịch trình : Cho phép người dùng lập lịch cho các tác vụ, đặt thời gian bắt đầu , thời gian kết thúc , thời gian nhắc nhở và thời gian hoàn thành dự kiến .
 			2. Tính năng theo dõi thời gian : Cho phép người dùng theo dõi thời gian đã dành cho mỗi tác vụ, Thời gian còn lại và thời gian đã hoàn thành .
 			3. Tính năng hồ sơ người dùng
@@ -24,7 +24,7 @@ Phân tích bổ sung :
 			5. Đa ngôn ngữ 
 			6. Xuất file
 			7. tích hợp j j đó ////
-Phân tích database 
+# Phân tích database 
 	1. Bảng User 
 		1. rowid (PK)
 		2. uName 
