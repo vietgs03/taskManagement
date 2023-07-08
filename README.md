@@ -74,7 +74,7 @@
 		1. rowid (PK)
 		2. taskID (FK tasks.rowid)
 		3. filePath
-Các quan hệ như sau :
+# Các quan hệ như sau :
 	- Bảng "Tasks" có quan hệ n-1 với bảng "Users" thông qua field "CreatedBy" và "assignedTo"
 	- Bảng "Comments" có quan hệ n-1 với bảng "Tasks" và "Users"
 	- Bảng "Notifications" có quan hệ n-1 với bảng "Tasks" và "Users"
